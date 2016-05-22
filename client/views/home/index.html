@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MUSEFIND</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic,100,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/scripts/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body ng-controller="mainController" ng-cloak>
+    <div layout="column" layout-fill>
+        <md-toolbar class="toolbar {{titleClass}}" ng-cloak layout="row">
+            <div class="title-logo {{titleClass}}" >
+                {{titleLogo}}
+            </div>
+            <div layout="row" layout-align="end center" layout-fill>
+                <md-button style="color:#333 !important;text-transform: capitalize !important;">Campaigns</md-button>
+                <md-button style="color:#333 !important;">NOVA</md-button>
+                <md-button style="color:#333 !important;">LOG IN</md-button>
+            </div>
+    
+        </md-toolbar>
+        <md-content  ng-view layout-fill>
+    
+        </md-content>
+    </div>
+    <script src="/scripts/lodash/lodash.min.js"></script>
+    <script src="/scripts/angular/angular.min.js"></script>
+    <script src="/scripts/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="/scripts/angular-route/angular-route.min.js"></script>
+    <script src="/scripts/angular-animate/angular-animate.min.js"></script>
+    <script src="/scripts/angular-aria/angular-aria.min.js"></script>
+    <script src="/scripts/angular-messages/angular-messages.min.js"></script>
+    <script src="/scripts/angular-material/angular-material.min.js"></script>
+
+    <script src="/js/route.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/controller/mainController.js"></script>
+    <script src="/js/controller/campaignController.js"></script>
+    <script src="/js/service/service.js"></script>
+</body>
+
+</html>

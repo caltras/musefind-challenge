@@ -1,0 +1,35 @@
+{
+  "name": "muse-find",
+  "version": "0.0.0",
+  "description": "Challenge MuseFind.",
+  "main": "server.js",
+  "repository": "",
+  "author": "Claudio Traspadini Oliveira <caltras@gmail.com>",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-aria": "^1.5.5",
+    "angular-material": "^1.0.8",
+    "angular-messages": "^1.5.5",
+    "angular-mocks": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "angular-sanitize": "^1.5.5",
+    "async": "~0.2.8",
+    "ejs": "^2.4.1",
+    "express": "~3.2.4",
+    "lodash": "^4.12.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "socket.io": "~0.9.14"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-jshint": "^0.12.0",
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-contrib-uglify": "^0.11.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

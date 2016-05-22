@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MUSEFIND</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic,100,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/scripts/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="bg" ng-cloak>
+    <div class="load-wrapper" ng-if="progress">
+        <div class="inner-load">
+            <div class="load-logo" >
+                Mf
+            </div>
+            <div class="progress-custom" style='width:200px;'>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+    <section class="header transparent" layout="row">
+        <div flex="66" class="title">MUSEFIND</div>
+        <div flex="33" class="menu">
+            <ul>
+                <li>
+                    <md-button>HOME</md-button>
+                </li>
+                <li>
+                    <md-button>JOIN</md-button>
+                </li>
+                <li>
+                    <md-button>LOGIN</md-button>
+                </li>
+                <li>
+                    <md-button>CONTACT</md-button>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div layout="column" layout-align="center center" style="padding-bottom: 300px;padding-top: 50px;">
+        <md-whiteframe class="md-padding setup md-whiteframe-5dp">
+            <div layout="column">
+                <div flex class="center title-form">LOGIN</div>
+                <div flex class="center sub-title-form">Restricted access</div>
+                
+                <form name="accountForm" flex  class="form-account" action="/login/auth" method="POST" >
+                    <div layout="column">
+                        <md-input-container flex class="md-primary" style="margin:0px">
+                            <label>Email</label>
+                            <input ng-model="username" name="username" required>
+                        </md-input-container>
+                        <md-input-container flex style="margin:0px">
+                            <label>Password</label>
+                            <input ng-model="password" name="password" required>
+                        </md-input-container>
+                    </div>
+                    <div class="center">
+                        <md-button class="md-raised md-primary" type="submit">
+                            Login
+                        </md-button>
+                    </div>
+                    
+                </form>
+            </div>
+        </md-whiteframe>
+    </div>
+    <div class="footer" layout="row">
+        <div flex="50" class="copyright center">Copyright: 2016. MuseFind</div>
+        <div flex="50" class="social-networks center">
+            <div class="fa fa-instagram"></div>
+            <div class="fa fa-facebook"></div>
+            <div class="fa fa-twitter"></div>
+            <div class="fa fa-linkedin"></div>
+        </div>
+    </div>
+
+    <script src="/scripts/angular/angular.min.js"></script>
+    <script src="/scripts/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="/scripts/angular-route/angular-route.min.js"></script>
+    <script src="/scripts/angular-animate/angular-animate.min.js"></script>
+    <script src="/scripts/angular-aria/angular-aria.min.js"></script>
+    <script src="/scripts/angular-messages/angular-messages.min.js"></script>
+    <script src="/scripts/angular-material/angular-material.min.js"></script>
+    
+    <script src="/js/route.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/controller/accountController.js"></script>
+    <script src="/js/service/service.js"></script>
+</body>
+
+</html>

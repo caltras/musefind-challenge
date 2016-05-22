@@ -1,0 +1,206 @@
+<div layout="row" style="height:100%;background-color:#ededed;" ng-controller="campaignController">
+    <div style="width:399px;background-color:#333;height:100%">
+        <h5 style="padding:20px;color:white">Navigation</h5>
+        <div style="padding:20px;color:white">Create Campaign</div>
+    </div>
+    <div class="md-padding" layout-fill>
+        <h3 style="font-weight:100">Create Campaign</h3>
+        <md-card layout="row" style="height:700px;">
+            <div flex="40" style="background-color: #5fa2dd;" layout layout-align="center center">
+                <div class="center">
+                    <div class="center" style="color:white;font-size:36px">{{title}}</div>
+                    <div class="center" style="color:#266fb0;font-size:36px;display:flex;align-items: center;justify-content: center">
+                        <div style="width:62px;height:62px;border-radius:50%;background-color:#6fabe0;display:flex;align-items: center;justify-content: center">
+                            <div class="fa fa-{{icon}}"></div>
+                        </div>
+                    </div>
+                    <div class="center" style="color:white;font-size:14px">{{subTitle}}</div>
+                    <div class="center" style="color:white;font-size:14px;margin-top:10px" ng-if="state==='info'">
+                        <span class="fa fa-arrow-right" style="padding:10px;background-color:#5396d1"></span><span style="background-color:#579ddb;padding:10px;padding-left:5px">Start</span>
+                    </div>
+                </div>
+            </div>
+            <div flex="60" layout="column">
+                <div layout="row" style="height:100px;font-size:12px">
+                    <div flex="20" layout="column" layout-align="center center">
+                        <div style="background-color:#f76c51;padding:10px;width:40px;height:40px;text-align:center">
+                            <span class="fa fa-rocket"></span>
+                        </div>
+                        Info
+                    </div>
+                    <div flex="20" layout="column" layout-align="center center">
+                        <div style="padding:10px;background-color:{{countStep > 0 ? '#ebaa4b': '#eaeaea'}};width:40px;height:40px;text-align:center" ng-style>
+                            <span class="fa fa-arrows-v"></span>
+                        </div>
+                        Vertical
+                    </div>
+                    <div flex="20" layout="column" layout-align="center center">
+                        <div style="padding:10px;background-color:{{countStep > 1 ? '#4ebcda': '#eaeaea'}};width:40px;height:40px;text-align:center">
+                            <span class="fa fa-user"></span>
+                        </div>
+                        Influencer
+                    </div>
+                    <div flex="20" layout="column" layout-align="center center">
+                        <div style="padding:10px;background-color:{{countStep > 2 ? '#9cc96b': '#eaeaea'}};width:40px;height:40px;text-align:center">
+                            <span class="fa fa-hashtag"></span>
+                        </div>
+                        Post Details
+                    </div>
+                    <div flex="20" layout="column" layout-align="center center">
+                        <div style="padding:10px;background-color:{{countStep > 3 ? '#50c7a7': '#eaeaea'}};width:40px;height:40px;text-align:center">
+                            <span class="fa fa-check-square"></span>
+                        </div>
+                        Finish
+                    </div>
+                </div>
+                <md-progress-linear md-mode="determinate" value="{{progress}}"></md-progress-linear>
+                <md-content layout="column" layout-align="center center">
+                    <form style="width: 80%;">
+                        <div layout="column" ng-if="countStep===0">
+                            <md-input-container>
+                                <label>Brand</label>
+                                <md-select ng-model="campaign.brand">
+                                    <md-option ng-repeat="brand in brands" value="{{brand.id}}">
+                                        {{brand.name}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Campaign title</label>
+                                <input required ng-model="campaign.title" name="title">
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Campaign Purpose</label>
+                                <textarea required ng-model="campaign.purpose" name="purpose"></textarea>
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Ideal Consumer Profle</label>
+                                <textarea required ng-model="campaign.consumer" name="consumer"></textarea>
+                            </md-input-container>
+                        </div>
+                        <div layout="column" ng-if="countStep===1">
+                            <div style="border: 1px solid #ededed;padding: 20px;">
+                                <div style="color:#333">Select the vertical for this campaign</div>
+                                <md-divider></md-divider>
+                                <div layout="row" style="font-size:12px">
+                                    <div layout="column" flex>
+                                        <md-switch ng-model="campaign.verticals[0].checked" aria-label="fashion-apparel" flex>
+                                            Fashion/Apparel
+                                        </md-switch>
+                                        <md-switch ng-model="campaign.verticals[1].checked" aria-label="baby" flex>
+                                            Baby
+                                        </md-switch>
+                                        <md-switch ng-model="campaign.verticals[2].checked" aria-label="pets" flex>
+                                            Pets
+                                        </md-switch>
+                                        <md-switch  ng-model="campaign.verticals[3].checked" aria-label="Health" flex>
+                                            Health
+                                        </md-switch>
+                                    </div>
+                                    <div layout="column" flex>
+                                        <md-switch ng-model="campaign.verticals[4].checked" aria-label="food" flex>
+                                            Food
+                                        </md-switch>
+                                        <md-switch  ng-model="campaign.verticals[5].checked" aria-label="fitness" flex>
+                                            Fitness
+                                        </md-switch>
+                                        <md-switch ng-model="campaign.verticals[6].checked" aria-label="sports" flex>
+                                            Sports
+                                        </md-switch>
+                                        <md-switch ng-model="campaign.verticals[7].checked" aria-label="Beauty/Cosmetics" flex>
+                                            Beauty/Cosmetics
+                                        </md-switch>
+                                    </div>
+                                    <div layout="column" flex>
+                                        <md-switch ng-model="campaign.verticals[8].checked" aria-label="Tech" flex>
+                                            Tech
+                                        </md-switch>
+                                        <md-switch ng-model="campaign.verticals[9].checked" aria-label="Jewelry/Acessories" flex>
+                                            Jewelry/Acessories
+                                        </md-switch>
+                                        <md-switch ng-model="campaign.verticals[10].checked" aria-label="CPG" flex>
+                                            CPG
+                                        </md-switch>
+                                        <div flex></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div layout="column" ng-if="countStep===2">
+                            <md-input-container>
+                                <label>Influencer Budget</label>
+                                <input type="number" required ng-model="campaign.influencerBuget" name="influencerBuget">
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Number of Products</label>
+                                <input type="number" required ng-model="campaign.numberOfProducts" name="numberOfProducts">
+                            </md-input-container>
+                            <md-divider></md-divider>
+                            <md-input-container>
+                                <label>Ideal Influencer Profile</label>
+                                <textarea required ng-model="campaign.profileInfluencer" name="profileInfluencer"></textarea>
+                            </md-input-container>
+                        </div>
+                        <div layout="column" ng-if="countStep===3">
+                            <md-input-container>
+                                <label>Social Media Post Requirements</label>
+                                <textarea required ng-model="campaign.socialRequirement" name="socialRequirement"></textarea>
+                            </md-input-container>
+                            <md-chips ng-model="campaign.tags" placeholder="Require tags on Post" delete-button-label="Remove Tag" delete-hint="Press delete to remove tag" secondary-placeholder="+Tag">
+                            </md-chips>
+                        </div>
+                        <div layout="column" ng-if="countStep===4">
+                            <div style="border: 1px solid #ededed;padding: 20px;">
+                                <div style="color:#333">Summary</div>
+                                <md-divider></md-divider>
+                                <div layout="row" style="padding:10px;font-size:14px;">
+                                    <span flex="50"><b>Campaign title:</b></span><span>{{campaign.title}}</span>
+                                </div>
+                                <div layout="row" style="padding:10px;font-size:14px;">
+                                    <b>Campaign purpose:</b>{{campaign.purpose}}
+                                </div>
+                                <div layout="row" style="padding:10px;font-size:14px;">
+                                    <span flex="50"><b>Ideal consumer Profile:</b></span><span>{{campaign.consumer}}</span>
+                                </div>
+                                <div layout="row" style="padding:10px;font-size:14px;">
+                                    <span flex="50"><b>Vertical:</b></span><span>{{toStringVerticals(campaign.verticals)}}</span>
+                                </div>
+                                <div layout="row" style="padding:10px;font-size:14px;">
+                                    <span flex="50"><b>Influencer Budget:</b></span><span>{{campaign.influencerBuget}}</span>
+                                </div>
+                                <div layout="row" style="padding:10px;font-size:14px;">
+                                    <span flex="50"><b>Number of Products:</b></span><span>{{campaign.numberOfProducts}}</span>
+                                </div>
+                                <div layout="row" style="padding:10px;font-size:14px;">
+                                    <span flex="50"><b>Ideal Influencer Profile:</b></span><span>{{campaign.profileInfluencer}}</span>
+                                </div>
+                                <div layout="row" style="padding:10px;font-size:14px;">
+                                    <span flex="50"><b>Social Media Post Requirements:</b></span><span>{{campaign.socialRequirement}}</span>
+                                </div>
+                                <div layout="row" style="padding:10px;font-size:14px;">
+                                    <span flex="50"><b>Required Tags:</b></span><span>{{toStringTags(campaign.tags)}}</span>
+                                </div>
+                                <md-divider></md-divider>
+                                <div layout="row" style="padding:10px;font-size:14px;">
+                                    <span flex="50"><b>Terms and Conditions:</b></span>
+                                    <span>
+                                        <md-switch aria-label="CPG" flex style="margin:0px;padding:0px;">
+                                            I accept the terms and conditions
+                                        </md-switch>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div layout layout-align="end center">
+                            <md-button class="md-raised" ng-if="state!=='info'" style="background-color:#579ddb;color:white;" ng-click="prev()">Previous</md-button>
+                            <md-button class="md-raised" ng-if="state!=='finish'" style="background-color:#579ddb;color:white;" ng-click="next()">Next</md-button>
+                            <md-button class="md-raised" ng-if="state==='finish'" style="background-color:#579ddb;color:white;" ng-click="save()">Finish</md-button>
+                        </div>
+                    </form>
+                </md-content>
+
+            </div>
+        </md-card>
+    </div>
+</div>
