@@ -16,19 +16,30 @@ We are currently working on the backend and would like to create a simple and in
 
 We have a good idea of what kind of layout we need, we need assistance in making sure what we build contains all the necessary requirements of the end user.
 
-What I did?
+# What I did?
 
 1) Nodejs Framework MVC based express
+
 	- Memory database
+
 	- Simple controllers overlay
+
 2) Frontend
+
 	- Angularjs
+
 	- create user interface.
+
 	- structure javascript and css
+
 3) Tools
+
 	- Grunt
+
 	- C9.io IDE
+
 	- Published in Elasticbeans (AWS)
+	
 
 ## Instal and Run
 
