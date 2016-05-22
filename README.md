@@ -1,4 +1,4 @@
-Vanhackathon
+## Vanhackathon
 
 Challenge: Musefind (musefind.com)
 
@@ -30,7 +30,7 @@ What I did?
 	- C9.io IDE
 	- Published in Elasticbeans (AWS)
 
-###############
+## Instal and Run
 
 Install Nodejs in your machine (https://nodejs.org/en/download/package-manager/)
 
