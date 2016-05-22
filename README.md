@@ -24,6 +24,6 @@ Pages created
 
 http://musefind-hackathon.us-west-2.elasticbeanstalk.com/
 
-http://musefind-hackathon.us-west-2.elasticbeanstalk.com/login (user: kjk, pass: kjk )
+http://musefind-hackathon.us-west-2.elasticbeanstalk.com/login/ (user: kjk, pass: kjk )
 
 http://musefind-hackathon.us-west-2.elasticbeanstalk.com/home/#/campaign/create
